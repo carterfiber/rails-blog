@@ -1,30 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1 class="text-center">Recent Posts</h1>
 
 <table class="table">
-  <thead>
+  <!-- <thead>
     <tr>
       <th>Title</th>
       <th>Author</th>
       <th>Blog entry</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+  </thead> -->
 
-  <tbody>
+  <!-- <tbody> -->
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.title %></td>
-        <td><%= post.author %></td>
-        <td><%= post.blog_entry.html_safe %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
+    <div class="col-md-6">
+    <div class="well">
+
+      <div class="panel-heading text-center h2"><%= post.title %></div>
+      <!-- List group -->
+      <ul class="list-group">
+        <li class="list-group-item text-center h3">By: <%= post.author %></li>
+        <li class="list-group-item text-center h5"><%= post.blog_entry.html_safe %></li>
+        
+        <li class="list-group-item "><%= link_to 'Show', post %></li>
+        
+        <li class="list-group-item"><%= link_to 'Edit', edit_post_path(post) %></li>
+        <li class="list-group-item"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <li class="list-group-item">Created on <%= post.created_at.strftime("%B %e, %Y at %l:%M") %></li>
+      </ul>
+
+    </div>
+  </div>
     <% end %>
-  </tbody>
+  <!-- </tbody> -->
 </table>
+
+
+
 
 <br>
 

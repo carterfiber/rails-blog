@@ -16,3 +16,9 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+.well {
+    background: #ffffff;
+    border-style: solid;
+    border-width: 15px;
+}
