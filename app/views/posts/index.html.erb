@@ -23,7 +23,7 @@
       <div class="panel-heading text-center h2"><%= post.title %></div>
       <!-- List group -->
       <ul class="list-group">
-        <li class="list-group-item text-center h3">By: <%= post.author %></li>
+        <li class="list-group-item text-center h3">By: <%= post.user.email %></li>
         <li class="list-group-item text-center h5"><%= post.blog_entry.html_safe %></li>
         
         <li class="list-group-item "><%= link_to 'Show', post %></li>

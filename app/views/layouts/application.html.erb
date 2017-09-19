@@ -9,21 +9,33 @@
   </head>
 
   <body>
-      
+<!-- navbar -->
       <nav class="navbar navbar-inverse navbar-sticky">
         <div class="container">
-          <div class="col-md-8">
+          <div class="col-md-6">
 
           <div class="navbar-header">
             <a class="navbar-brand" href="#">TechieBlog</a>
           </div>
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><%= link_to 'Home', index_path %></li>
             <li><a href="#">Page 1</a></li>
             <li><a href="#">Page 2</a></li>
           </ul>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
+<!-- welcome  -->
+          
+<!-- sign out -->
+          
+            <% if user_signed_in? %>
+            Welcome,  <%= current_user.email %>!
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger navbar-btn" %>
+            <% end %>
+          
+
+
+
           <form class="navbar-form navbar-right">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Search">
