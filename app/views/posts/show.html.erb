@@ -7,7 +7,7 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @post.user.email %>
+  <%= @post.user.email %> <%= image_tag @post.user.avatar.thumb %>
 </p>
 
 <p>
@@ -19,7 +19,7 @@
 	<%= render 'comments/form', comment: @comment %>
 	<% @post.comments.each do |comment| %>
 	<p>
-		<%= comment.user.email %> said...<br />
+		<%= image_tag @post.user.avatar.thumb %> <%= comment.user.username %> said...<br />
 		<%= comment.comment_entry %>
 	</p>
 	<% end %>
